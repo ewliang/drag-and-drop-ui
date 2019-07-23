@@ -1,1 +1,12 @@
+#dragDropArea {
+    font-size: 14px;
+    width: 480px;
+    height: auto;
+    padding: 25px;
+    border: 2px dashed #eeeeee;
+    border-radius: 8px;
+}
 
+#dragDropArea img {
+    max-width: 200px;
+}

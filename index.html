@@ -12,18 +12,21 @@
 </head>
 
 <body class = "container">
-  <div class = "justify-content-center align-items-center">
-    <h1>File Uploader UI</h1>
-    <p>
-      A basic HTML/CSS drag and drop file uploader web interface.
-    </p>
-    <form>
-      <input type = "file" multiple/>
-      <p>
-        Drag your files here or click here.
-      </p>
-      <input type = "submit" value = "Upload"/>
-    </form>
+  <div class = "row">
+    <div class = "col-sm-12 text-center">
+        <h1>File Uploader UI</h1>
+        <p>
+          A basic HTML/CSS drag and drop file uploader web interface.
+        </p>
+        <form id = "dragDropArea" class = "ml-auto mr-auto">
+          <img src = "imgs/bg.png" class = "img-fluid" alt = "Background Image"/>
+          <input type = "file" name = "myImages" accept = "image/png, image/jpeg" multiple/>
+          <label>
+            Drag your files here or click here.
+          </label>
+          <input type = "submit" value = "Upload"/>
+        </form>
+    </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
