@@ -25,40 +25,38 @@ showFilesButton.onclick = function(event) {
 
 // Click Upload
 dragDropArea.onclick = function(event) {
-    event.dataTransfer.setData();
     event.preventDefault();
 }
 
 // Drag & Drop Event Handlers
 dragDropArea.ondragenter = function(event) {
     console.log("ENTER");
-    event.preventDefault();
-    dragDropArea.style.borderColor = "#1296d4";
+    dragDropArea.style.borderColor = "#f19066";
     event.preventDefault();
 }
 
 dragDropArea.ondragover = function(event) {
     console.log("OVER");
-    event.preventDefault();
-    dragDropArea.style.borderColor = "#1296d4";
+    dragDropArea.style.borderColor = "#f19066";
     event.preventDefault();
 }
 dragDropArea.ondrop = function(event) {
     console.log("DROP");
-    event.preventDefault();
-    imageUploader.click();
-    dragDropArea.style.borderColor = "#eeeeee";
+    dragDropArea.style.borderColor = "#f3a683";
+    var dt = event.dataTransfer;
+    var files = dt.files;
+    for(let i = 0; i < files.length; i++) {
+        console.log(files[i]);
+    }
     event.preventDefault();
 }
 dragDropArea.ondragleave = function(event) {
     console.log("BYE");
-    event.preventDefault();
-    dragDropArea.style.borderColor = "#eeeeee";
+    dragDropArea.style.borderColor = "#f3a683";
     event.preventDefault();
 }
 dragDropArea.ondragend = function(event) {
     console.log("END");
-    event.preventDefault();
-    dragDropArea.style.borderColor = "#eeeeee";
+    dragDropArea.style.borderColor = "#f3a683";
     event.preventDefault();
 }
