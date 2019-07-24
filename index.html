@@ -7,32 +7,28 @@
   <meta name = "description" content = "File Uploader UI">
   <meta name = "author" content = "Eric Liang">
   <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel = "stylesheet" href = "css/style.css">
 </head>
 
-<body class = "container">
-  <div class = "row">
-    <div class = "col-sm-12 text-center">
+<body>
+    <div class = "container">
         <h1>File Uploader UI</h1>
         <p>
           A basic HTML/CSS drag and drop file uploader web interface.
         </p>
-        <form id = "dragDropArea" class = "ml-auto mr-auto">
-          <!--<img src = "imgs/bg.png" class = "img-fluid" alt = "Background Image"/>-->
+        <form id = "dragDropArea">
           <input type = "file" id = "myImages" name = "myImages" accept = "image/jpg,image/jpeg,image/png,image/bmp,image/gif" multiple/>
           <label>
             Choose a file or drag and drop here.
           </label>
         </form>
         <br>
-        <button type = "button" id = "showFilesBtn">Show Files</button>
-    </div>
-  </div>
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <button type = "button" class = "btn btn-primary" id = "showFilesBtn">Show Files</button>
+        <br>
+        <footer class = "main-footer">
+          Copyright &copy; 2019 <a href = "https://www.eric-liang.com">Eric Liang</a> All Rights Reserved.
+        </footer>
+      </div>
   <script src="js/scripts.js"></script>
 </body>
 </html>
