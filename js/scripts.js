@@ -2,6 +2,8 @@ var dragDropArea = document.getElementById('dragDropArea');
 var imageUploader = document.getElementById('myImages');
 var showFilesButton = document.getElementById('showFilesBtn');
 
+var imagePreviewer = document.getElementById('imagePreviewer');
+
 // Valid File Type Checker
 var validFileTypes = [
     'image/jpg',
@@ -20,6 +22,7 @@ showFilesButton.onclick = function(event) {
     for(let i = 0; i < imageUploader.files.length; i++) {
         console.log(imageUploader.files[i].name + " Valid: " + isValidFileType(imageUploader.files[i]));
     }
+    event.preventDefault();
 }
 
 
@@ -46,7 +49,20 @@ dragDropArea.ondrop = function(event) {
     var dt = event.dataTransfer;
     var files = dt.files;
     for(let i = 0; i < files.length; i++) {
-        console.log(files[i]);
+        // Read Drag & Dropped File Content
+        var reader = new FileReader();
+        reader.readAsDataURL(files[i]);
+        reader.onload = function(event) {
+            // Create Image Element to Display Preview
+            var img = new Image();
+            img.src = event.target.result;
+            img.onload = function() {
+                dragDropArea.appendChild(img);
+                var listItem = document.createElement('li');
+                listItem.appendChild(img);
+                imagePreviewer.appendChild(listItem);
+            }
+        }
     }
     event.preventDefault();
 }
