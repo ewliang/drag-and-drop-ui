@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset = "utf-8">
-  <title>File Uploader UI</title>
+  <title>Drag and Drop UI | Eric Liang</title>
   <meta name = "description" content = "File Uploader UI">
   <meta name = "author" content = "Eric Liang">
   <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
@@ -12,14 +12,15 @@
 
 <body>
     <div class = "container">
-        <h1>File Uploader UI</h1>
-        <p>
-          A basic HTML/CSS drag and drop file uploader web interface.
-        </p>
+        <h1>Drag and Drop UI</h1>
         <form id = "dragDropArea">
           <input type = "file" id = "imageUploader" name = "imageUploader" accept = "image/jpg,image/jpeg,image/png,image/bmp,image/gif" multiple/>
+          <img src = 'imgs/upload-icon.png' alt = "Upload Icon"/>
+          <p>
+            Upload your picture(s) here.
+          </p>
           <label>
-            Choose a file or drag and drop here.
+            Drag and drop your files here or <a href = "">browse</a>.
           </label>
         </form>
         <br>
@@ -30,7 +31,7 @@
         </ul>
         <br>
         <footer class = "main-footer">
-          Copyright &copy; 2019 <a href = "https://www.eric-liang.com">Eric Liang</a> All Rights Reserved.
+          Copyright &copy; <script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script> <a href = "https://www.eric-liang.com">Eric Liang</a> All Rights Reserved.
         </footer>
       </div>
   <script src="js/scripts.js"></script>
