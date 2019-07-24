@@ -54,6 +54,15 @@ input[type="file"] {
     display: none;
 }
 
+#imagePreviewer > li {
+    display: inline-block;
+}
+
+#imagePreviewer > li > img {
+    max-width: 200px;
+    height: auto;
+}
+
 .main-footer {
     font-size: 0.8rem;
 }
