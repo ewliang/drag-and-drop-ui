@@ -1,8 +1,18 @@
+/*
+    Title: Drag & Drop UI
+    File: scripts.js
+    Author: Eric Liang
+    Author URI: https://www.eric-liang.com
+    Repository: https://github.com/ewliang/file-uploader-ui
+    License: MIT License
+*/
+
 var dragDropArea = document.getElementById('dragDropArea');
 var imageUploader = document.getElementById('imageUploader');
 var showFilesButton = document.getElementById('showFilesBtn');
-
 var imagePreviewer = document.getElementById('imagePreviewer');
+
+var uploads = []; // Keep track of file uploads via drag & drop and file system upload
 
 // Valid File Type Checker
 var validFileTypes = [
@@ -19,18 +29,24 @@ function isValidFileType(file) {
 
 // Debug - Show Uploaded Files Button
 showFilesButton.onclick = function() {
-    for(let i = 0; i < imageUploader.files.length; i++) {
-        console.log(imageUploader.files[i].name + " Valid: " + isValidFileType(imageUploader.files[i]));
+    for(let i = 0; i < uploads.length; i++) {
+        console.log(uploads[i]);
     }
 }
-
 
 // Click Upload
 dragDropArea.onclick = function() {
     imageUploader.click();
 }
 
-// Drag & Drop Event Handlers
+// Click Upload - Append Uploads From File System Upload
+imageUploader.onchange = function() {
+    for(var i = 0; i < imageUploader.files.length; i++) {
+        uploads.push(imageUploader.files[i]);
+    }
+}
+
+// Drag & Drop Upload - Event Handlers for Drag & Drop Upload
 dragDropArea.ondragenter = function(event) {
     dragDropArea.style.borderColor = "#f19066";
     event.preventDefault();
@@ -46,6 +62,7 @@ dragDropArea.ondrop = function(event) {
     var dt = event.dataTransfer;
     var files = dt.files;
     for(let i = 0; i < files.length; i++) {
+        uploads.push(files[i]);
         // Read Drag & Dropped File Content
         var reader = new FileReader();
         reader.readAsDataURL(files[i]);
