@@ -20,7 +20,9 @@
 </head>
 
 <body>
-    <div class = "container">
+  <div class = "container">
+    <div class = "row">
+      <div>
         <h1>Drag and Drop UI</h1>
         <form id = "dragDropArea">
           <input type = "file" id = "imageUploader" name = "imageUploader" accept = "image/jpg,image/jpeg,image/png,image/bmp,image/gif" multiple/>
@@ -34,15 +36,18 @@
         </form>
         <br>
         <button type = "button" id = "showFilesBtn" class = "btn btn-primary">Show Files</button>
-        <br>
-        <ul id = "imagePreviewer">
-          
-        </ul>
-        <br>
-        <footer class = "main-footer">
-          Copyright &copy; <script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script> <a href = "https://www.eric-liang.com">Eric Liang</a> All Rights Reserved.
-        </footer>
       </div>
+      <ul id = "imageFileListPreview">
+      </ul>
+    </div><!--end row-->
+    <div class = "row">
+        <ul id = "imagePreviewer">
+        </ul>
+    </div>
+    <footer class = "main-footer">
+        Copyright &copy; <script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script> <a href = "https://www.eric-liang.com">Eric Liang</a> All Rights Reserved.
+    </footer>
+  </div><!--end container-->
   <script src="js/scripts.js"></script>
 </body>
 </html>
