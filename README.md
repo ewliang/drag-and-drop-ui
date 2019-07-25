@@ -1,5 +1,5 @@
-# File Uploader UI
-A HTML and CSS implementation of a drag and drop file upload UI.
+# Drag & Drop UI
+A HTML, CSS, and Javascript implementation of a drag and drop file upload UI.
 
 ## Repository
 Github Repository [https://github.com/ewliang/file-uploader-ui](https://github.com/ewliang/file-uploader-ui)
