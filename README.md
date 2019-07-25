@@ -1,4 +1,5 @@
 # Drag & Drop UI
+![Drag and Drop UI Preview Screenshot](https://github.com/ewliang/drag-and-drop-ui/blob/master/preview.jpg "Drag and Drop UI Preview Screenshot")
 A HTML, CSS, and Javascript implementation of a drag and drop file upload UI.
 
 ## Repository
