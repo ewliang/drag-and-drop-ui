@@ -32,12 +32,19 @@ a {
 
 /* Theme Components */
 .container {
-    max-width: 640px;
+    max-width: 100%;
     background-color: #fff;
     margin: 0 auto;
     padding: 25px 50px;
     border-radius: 8px;
     filter: drop-shadow(1px 10px 10px #f3a683);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
 }
 
 .btn {
@@ -68,6 +75,7 @@ a {
     text-align: center;
     border: 2px dashed #f3a683;
     border-radius: 12px;
+    cursor: pointer;
 }
 
 #dragDropArea img {
@@ -88,6 +96,7 @@ input[type="file"] {
 /* Image Previewer */
 #imagePreviewer {
     padding-left: 0px;
+    overflow-y: scroll;
 }
 
 #imagePreviewer > li {
@@ -97,6 +106,19 @@ input[type="file"] {
 #imagePreviewer > li > img {
     max-width: 200px;
     height: auto;
+}
+
+/* Image File List Preview */
+#imageFileListPreview {
+    font-size: 0.8rem;
+    padding-left: 0px;
+    list-style-type: none;
+    overflow-y: auto;
+    margin: 0;
+}
+
+#imageFileListPreview > li {
+    padding: 10px 25px;
 }
 
 .main-footer {
