@@ -11,6 +11,7 @@ var dragDropArea = document.getElementById('dragDropArea');
 var imageUploader = document.getElementById('imageUploader');
 var showFilesButton = document.getElementById('showFilesBtn');
 var imagePreviewer = document.getElementById('imagePreviewer');
+var imageFileListPreviewer = document.getElementById('imageFileListPreview');
 
 var uploads = []; // Keep track of file uploads via drag & drop and file system upload
 
@@ -43,6 +44,8 @@ dragDropArea.onclick = function() {
 imageUploader.onchange = function() {
     for(var i = 0; i < imageUploader.files.length; i++) {
         uploads.push(imageUploader.files[i]);
+        displayImagePreview(imageUploader.files[i]);
+        displayImageList(imageUploader.files[i]);
     }
 }
 
@@ -63,20 +66,8 @@ dragDropArea.ondrop = function(event) {
     var files = dt.files;
     for(let i = 0; i < files.length; i++) {
         uploads.push(files[i]);
-        // Read Drag & Dropped File Content
-        var reader = new FileReader();
-        reader.readAsDataURL(files[i]);
-        reader.onload = function(event) {
-            // Create Image Element to Display Preview
-            var img = new Image();
-            img.src = event.target.result;
-            img.onload = function() {
-                dragDropArea.appendChild(img);
-                var listItem = document.createElement('li');
-                listItem.appendChild(img);
-                imagePreviewer.appendChild(listItem);
-            }
-        }
+        displayImagePreview(files[i]);
+        displayImageList(files[i]);
     }
     event.preventDefault();
 }
@@ -89,4 +80,29 @@ dragDropArea.ondragleave = function(event) {
 dragDropArea.ondragend = function(event) {
     dragDropArea.style.borderColor = "#f3a683";
     event.preventDefault();
+}
+
+// Display Preview of Uploaded Image
+function displayImagePreview(file) {
+    // Read Drag & Dropped File Content
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function(event) {
+        // Create Image Element to Display Preview
+        var img = new Image();
+        img.src = event.target.result;
+        img.onload = function() {
+            dragDropArea.appendChild(img);
+            var listItem = document.createElement('li');
+            listItem.appendChild(img);
+            imagePreviewer.appendChild(listItem);
+        }
+    }
+}
+
+// Display List of Uploaded Images
+function displayImageList(file) {
+    var newImageFileItem = document.createElement('li');
+    newImageFileItem.textContent = file.name + '<br>' + file.size;
+    imageFileListPreviewer.appendChild(newImageFileItem);
 }
