@@ -1,3 +1,13 @@
+/*
+    Title: Drag & Drop UI
+    File: style.css
+    Author: Eric Liang
+    Author URI: https://www.eric-liang.com
+    Repository: https://github.com/ewliang/file-uploader-ui
+    License: MIT License
+*/
+
+/* HTML Elements */
 html, body {
     font-family: 'Open Sans';
     background-color: #fadbcd;
@@ -10,6 +20,7 @@ html, body {
 }
 
 h1 {
+    color: #666666;
     font-size: 1.5rem;
     font-weight: 400;
 }
@@ -19,6 +30,7 @@ a {
     text-decoration: none;
 }
 
+/* Theme Components */
 .container {
     max-width: 640px;
     background-color: #fff;
@@ -45,7 +57,9 @@ a {
     cursor: pointer;
 }
 
+/* Drag & Drop */
 #dragDropArea {
+    color: #999999;
     font-size: 14px;
     background-color: #fadbcd;
     max-width: 240px;
@@ -71,6 +85,11 @@ input[type="file"] {
     display: none;
 }
 
+/* Image Previewer */
+#imagePreviewer {
+    padding-left: 0px;
+}
+
 #imagePreviewer > li {
     display: inline-block;
 }
@@ -81,5 +100,6 @@ input[type="file"] {
 }
 
 .main-footer {
+    color: #cccccc;
     font-size: 0.8rem;
 }
